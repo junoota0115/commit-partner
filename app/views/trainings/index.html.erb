@@ -1,15 +1,6 @@
 
 <h1>自分の日記</h1>
- <tbody>
-    <% @trainings.each do |training| %>
-      <tr>
-        <td><%= training.start_time %></td>
-        <td><%= link_to 'Show' ,training_path(training.id) %></td>
-        <td><%= link_to 'Edit' %></td>
-        <td><%= link_to 'Destroy',training_path(training.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+
 
 <br>
 
@@ -25,5 +16,7 @@
     </div>
   <% end %>
 <% end %>
+
+<%= link_to 'Top', root_path%>
 
 

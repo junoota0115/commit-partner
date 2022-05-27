@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'trainings#index'
+  root to: 'mains#index'
+  resources :mains 
   resources :trainings
 end

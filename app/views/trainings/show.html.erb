@@ -44,7 +44,13 @@
         <%= @trainings.memo %>
       </span>
 
-      
+       <tbody>
+      <tr>
+        <td><%#= link_to 'Edit' ,@trainings(training.id)%></td>
+        <td><%= link_to 'Destroy',@trainings, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    
+  </tbody>
 </div>
 
 

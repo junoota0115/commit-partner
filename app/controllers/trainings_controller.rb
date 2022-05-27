@@ -10,7 +10,7 @@ class TrainingsController < ApplicationController
   def create
     @training  = Training.new(training_params)
     if @training.save
-      redirect_to root_path
+      redirect_to trainings_path
     else
       render :new
     end
@@ -23,7 +23,7 @@ class TrainingsController < ApplicationController
   def destroy
     @training = Training.find(params[:id])
     @training.destroy
-    redirect_to root_path, notice:"削除しました"
+    redirect_to trainings_path, notice:"削除しました"
   end
 
   private
