@@ -1,0 +1,29 @@
+
+<h1>自分の日記</h1>
+ <tbody>
+    <% @trainings.each do |training| %>
+      <tr>
+        <td><%= training.start_time %></td>
+        <td><%= link_to 'Show' ,training_path(training.id) %></td>
+        <td><%= link_to 'Edit' %></td>
+        <td><%= link_to 'Destroy',training_path(training.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+<br>
+
+<%= link_to 'トレーニングする', new_training_path %>
+
+<%= month_calendar events: @trainings do |date, trainings| %>
+  <%= date.day %>
+  
+
+  <% trainings.each do |training| %>
+    <div>
+      <%= link_to training.training_name.name,training %>
+    </div>
+  <% end %>
+<% end %>
+
+

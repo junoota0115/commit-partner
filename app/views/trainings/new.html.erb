@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<h1>ToDay Training</h1>
+
+<%= form_with(model: @training, local: true) do |f| %>
+
+  <div class="training_name_id">実施種目
+  <%= f.collection_select(:training_name_id, TrainingName.all, :id, :name, {}, {class:"training_name_id"}) %>
+
+  </div>
+
+      <div class="weight">
+    <%= f.label :挙上重量 %>
+    <%= f.text_field :weight %>
+  </div>
+
+    <div class="setting_numer_id">セット回数
+<%= f.collection_select(:setting_number_id, SettingNumber.all, :id, :name, {}, {class:"setting_number_id"}) %>
+  </div>
+
+  <div class="set_rep_id">挙上回数
+<%= f.collection_select(:set_rep_id, SetRep.all, :id, :name, {}, {class:"set_rep_id"}) %>
+  </div>
+
+  <div class="rest_time_id">休憩時間
+<%= f.collection_select(:rest_time_id, RestTime.all, :id, :name, {}, {class:"rest_time_id"}) %>
+  </div>
+
+    <div class="memo">メモ
+    <%= f.label :memo %>
+    <%= f.text_area :memo, class:"training-memo", id:"item-info", placeholder:"MEMO（ 500文字まで）" ,rows:"3" ,maxlength:"500" %>
+      </div>
+
+          <div class="time">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+  </div>
+
+
+  </div>
+
+  <div class="submit">
+    <%= f.submit "登録する" %>
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+
+<% end %>
