@@ -1,2 +1,46 @@
-<div>メイン画面</div>
-<%= link_to 'トレーニング記録' ,'/trainings' %>
+<!doctype html>
+<html lang="ja">
+
+  <head>
+    <%= render "shared/header" %>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>CommitPartner</title>
+  </head>
+
+  <body>
+  <!--カテゴリーカード-->
+   <div class="mainbox">
+    <div class="main-title">CommitPartner</div>
+   <div class="main-dispary">
+   <div class="row">
+     <div class="col">
+      <div class="card">
+       <%= link_to image_tag("training1.jpeg", class:"card-img-top"), '/trainings' %>
+      <div class="card-body"><p class="card-text">トレーニングの管理をします</p></div>
+      </div>
+     </div>
+
+    <div class="col">
+      <div class="card">
+      <%= link_to image_tag("timer1.jpeg", class:"card-img-top"), '/timer' %>
+      <div class="card-body"><p class="card-text">タイマーを使います</p></div>
+     </div>
+    </div>
+
+    <div class="col">
+    <div class="card">
+      <%= link_to image_tag("practice1.jpeg", class:"card-img-top"), '/quizs' %>
+      <div class="card-body"><p class="card-text">勉強できます</p></div>
+    </div>
+    </div>
+    </div>
+   </div>
+    </div>
+<!--カテゴリーカード-->
+
+
+  </body>
+  <%= render "shared/footer" %>
+
+</html>

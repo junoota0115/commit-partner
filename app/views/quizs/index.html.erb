@@ -1,0 +1,108 @@
+<html>
+<head>
+<%= render "shared/header" %>
+<link rel="stylesheet" href="css/quizs.css">
+<script>
+let Q = [//クイズ
+'Q.ベンプレスはどこを主動筋として扱う種目でしょう？',
+' onclick="Q_(1);" >大胸筋',
+' onclick="Q_(2);" >大臀筋', 
+' onclick="Q_(2);" >上腕二頭筋', 
+'胸のトレーニングの際に取り入れられる種目なので、正解は[大胸筋]です。',
+
+'Q.BCAAと言われる分岐鎖アミノ酸ですが、どのような効果が期待されるでしょう？', 
+' onclick="Q_(1);" >筋力UPや筋力低下を防ぐ',
+' onclick="Q_(2);" >お通じが良くなる',
+' onclick="Q_(2);" >視力がUPしやすくなる',
+'正解は、[筋力UPや筋力低下を防ぐ]主に筋肉にサポートするのがBCAAです。他にも、肌艶や髪の艶なども良くしてくれます。<br/>マグロやサンマ、鶏肉などに豊富です',
+
+'Q.1日に70kgの男性が推奨されているタンパク質摂取量はどのくらいでしょう？', 
+' onclick="Q_(2);" >約210g',
+' onclick="Q_(2);" >約35g',
+' onclick="Q_(1);" >約100g',
+'体重×1.5gが推奨されますので[約100g]。ささみ1本に約10g、ゆで卵1個に約6g含有されています。',
+
+'Q.1日に推奨されている食物繊維の摂取量はどのくらいでしょう？', 
+' onclick="Q_(2);" >10g',
+' onclick="Q_(2);" >15g',
+' onclick="Q_(1);" >20g',
+'正解は20g。女性は18gが推奨されています。ちなみに、コンビニにあるキャベツの千切りは1袋で約3gです。',
+
+'Q.一番効果的にプロテインの効果を発揮するためには、いつ飲むべきでしょう？', 
+' onclick="Q_(1);" >トレーニング後30分以内',
+' onclick="Q_(2);" >トレーニング前',
+' onclick="Q_(2);" >いつ飲んでも良い',
+'いつ飲んでも効果はありますが、最も効果的なのは[トレーニング直後]です。</br>特に30分以内はゴールデンタイムと言われ、筋肉が最もタンパク質を欲しています。そのタイミングで吸収しやすいタンパク質を取り入れてあげましょう。',
+
+'Q.上腕三頭筋を鍛える際に取り入れられる種目はどれでしょう？', 
+' onclick="Q_(2);" >ブルガリアンスクワット',
+' onclick="Q_(2);" >アブダクション',
+' onclick="Q_(1);" >キックバック',
+'正解は[キックバック]です。ダンベルを使い、肘を固定支えて行う種目です。ブルガリアンスクワットは下半身を中心に、アブダクションは臀筋を中心に行う種目です。',
+
+'Q.デッドリフトを行う際に注意すべき点として誤っているものはどれでしょう？', 
+' onclick="Q_(2);" >背中を丸めない',
+' onclick="Q_(2);" >腹圧を入れたり腰ベルトを使う',
+' onclick="Q_(1);" >目線は下げたまま行う',
+'誤った動作は[目線を下げる]ことです。デッドリフトは腰背部や下半身を中心に使う種目です。目線を下げてしまうと力が抜けてしまい、腰を痛める原因にもなります。</br>目線を上げてお腹に力を入れてしっかりと挙上させていきましょう。',
+
+];
+
+let r_1 = Q.length / 5;//クイズを出すための変数
+let r_2 = Math.floor( Math.random() * r_1 ) ;
+let R = (r_2 * 5) ;//クイズを出すための変数
+
+
+//次の問題を表示するためのプログラム
+function Q_(oxq) {
+
+	if (oxq === 0){
+	
+	 r_1 = Q.length / 5;
+	 r_2 = Math.floor( Math.random() * r_1 );
+	 R = (r_2 * 5);
+
+ 	 document.getElementById("ox").innerHTML = '';
+	 document.getElementById("quiz").innerHTML = '';
+
+	 quiz = document.getElementById('quiz');
+	 quiz.insertAdjacentHTML('afterbegin', '<p>'+Q[R]+'</p>');
+	 quiz.insertAdjacentHTML('beforeend', '<button'+Q[R+1]+'</button><br/>');
+	 quiz.insertAdjacentHTML('beforeend', '<button'+Q[R+2]+'</button><br/>');
+	 quiz.insertAdjacentHTML('beforeend', '<button'+Q[R+3]+'</button><br/>');
+
+	} else if (oxq === 1) {//正解時の実行プログラム
+ 	 document.getElementById("ox").innerHTML = '<p>正解です！！</p>';
+	 document.getElementById("quiz").innerHTML = '<p>'+Q[R+4]+'</p>';
+ 	 document.getElementById("next").innerHTML = '<p><button onClick="Q_(0);">次の問題へ</button></p>';
+
+	} else if (oxq === 2) {//失敗時の実行プログラム
+ 	 document.getElementById("ox").innerHTML = '<p>残念、不正解！</p>';
+	 document.getElementById("quiz").innerHTML = '<p>'+Q[R+4]+'</p>';
+ 	 document.getElementById("next").innerHTML = '<p><button onClick="Q_(0);">次の問題へ</button></p>';
+	}
+}
+
+</script>
+</head>
+<body>
+
+<script>
+document.write('<p id="ox"></p>');
+
+document.write('<p id="quiz">');
+document.write(Q[R+0] +'<br/>');
+document.write('<button'+ Q[R+1] +'</button><br/>');
+document.write('<button'+ Q[R+2] +'</button><br/>');
+document.write('<button'+ Q[R+3] +'</button><br/>');
+document.write('</p>');
+
+document.write('<p id="next"><button onClick="Q_(0);">次の問題へ</button></p>');
+</script>
+
+<%= link_to 'Top', root_path%>
+<%= render "shared/footer" %>
+</body>
+
+
+</html>
