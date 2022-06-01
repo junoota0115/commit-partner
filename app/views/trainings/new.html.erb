@@ -1,46 +1,52 @@
-<p id="notice"><%= notice %></p>
-<h1>ToDay Training</h1>
 
+<%= render "shared/header" %>
+<div class="training-new-main">
+<h1>ToDay Training</h1>
 <%= form_with(model: @training, local: true) do |f| %>
 
-  <div class="training_name_id">実施種目
+  <div class="training_name_id">TrainingName
   <%= f.collection_select(:training_name_id, TrainingName.all, :id, :name, {}, {class:"training_name_id"}) %>
 
   </div>
 
       <div class="weight">
-    <%= f.label :挙上重量 %>
-    <%= f.text_field :weight %>
+    <%= f.label :Weight %>
+    <%= f.text_field :weight, placeholder:"◯kg,△lbs"%>
   </div>
 
-    <div class="setting_numer_id">セット回数
-<%= f.collection_select(:setting_number_id, SettingNumber.all, :id, :name, {}, {class:"setting_number_id"}) %>
+    <div class="setting_numer_id">Seting
+<%= f.collection_select(:setting_number_id, SettingNumber.all, :id, :name, {}, {class:"setting_number_id"}) %>set
   </div>
 
-  <div class="set_rep_id">挙上回数
-<%= f.collection_select(:set_rep_id, SetRep.all, :id, :name, {}, {class:"set_rep_id"}) %>
+  <div class="set_rep_id">Rep
+<%= f.collection_select(:set_rep_id, SetRep.all, :id, :name, {}, {class:"set_rep_id"}) %>times
   </div>
 
-  <div class="rest_time_id">休憩時間
-<%= f.collection_select(:rest_time_id, RestTime.all, :id, :name, {}, {class:"rest_time_id"}) %>
+  <div class="rest_time_id">Rest
+<%= f.collection_select(:rest_time_id, RestTime.all, :id, :name, {}, {class:"rest_time_id"}) %>s
   </div>
 
-    <div class="memo">メモ
+    <div class="memo">
     <%= f.label :memo %>
-    <%= f.text_area :memo, class:"training-memo", id:"item-info", placeholder:"MEMO（ 500文字まで）" ,rows:"3" ,maxlength:"500" %>
+    <%= f.text_area :memo, class:"training-memo", id:"item-info", placeholder:"MEMO（ 500文字）" ,rows:"3" ,maxlength:"500" %>
       </div>
 
           <div class="time">
-    <%= f.label :start_time %>
+    <%= f.label :TrainigDay %>
     <%= f.datetime_select :start_time %>
   </div>
 
 
-  </div>
+ 
 
   <div class="submit">
-    <%= f.submit "登録する" %>
-    <%=link_to 'もどる', root_path, class:"back-btn" %>
+    <%= f.submit "Recoding" %>
+    
   </div>
-
+  <%=link_to 'Back', trainings_path, class:"back-btn" %>
+ </div>
 <% end %>
+
+
+</div>
+<%= render "shared/footer" %>
