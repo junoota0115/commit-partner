@@ -1,25 +1,31 @@
 <%= render "shared/header" %>
 <div class="training-main">
 <h1><span>Training</span></h1>
-<br>
+<div class="training-btn">
+<%= link_to 'Record', new_training_path %>
+</div>
+
 
 <div class="training-record">
-<div class="training-btn">
-<%= link_to '記録する', new_training_path %>
+
 <%= month_calendar events: @trainings do |date, trainings| %>
+<div class="training-c">
   <%= date.day %>
   </div>
   </div>
+  </div>
   
-
+<div class="training-name-record">
   <% trainings.each do |training| %>
     <div>
       <%= link_to training.training_name.name,training %>
     </div>
   <% end %>
+  </div>
 <% end %>
 
 <%= link_to 'Top', root_path%>
 
 </div>
+
 <%= render "shared/footer" %>

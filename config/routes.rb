@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :trainings
   resources :timer
   resources :quizs
+  resources :mypages
 end

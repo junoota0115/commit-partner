@@ -2,9 +2,12 @@
 <head>
 <%= render "shared/header" %>
 <link rel="stylesheet" href="css/quizs.css">
+
+<div class="quiz-main">
+<h1><span>Quiz</span></h1>
 <script>
 let Q = [//クイズ
-'Q.ベンプレスはどこを主動筋として扱う種目でしょう？',
+'Q.ベンチプレスはどこを主動筋として扱う種目でしょう？',
 ' onclick="Q_(1);" >大胸筋',
 ' onclick="Q_(2);" >大臀筋', 
 ' onclick="Q_(2);" >上腕二頭筋', 
@@ -26,7 +29,7 @@ let Q = [//クイズ
 ' onclick="Q_(2);" >10g',
 ' onclick="Q_(2);" >15g',
 ' onclick="Q_(1);" >20g',
-'正解は20g。女性は18gが推奨されています。ちなみに、コンビニにあるキャベツの千切りは1袋で約3gです。',
+'正解は[20g]。女性は18gが推奨されています。ちなみに、コンビニにあるキャベツの千切りは1袋で約3gです。',
 
 'Q.一番効果的にプロテインの効果を発揮するためには、いつ飲むべきでしょう？', 
 ' onclick="Q_(1);" >トレーニング後30分以内',
@@ -45,6 +48,7 @@ let Q = [//クイズ
 ' onclick="Q_(2);" >腹圧を入れたり腰ベルトを使う',
 ' onclick="Q_(1);" >目線は下げたまま行う',
 '誤った動作は[目線を下げる]ことです。デッドリフトは腰背部や下半身を中心に使う種目です。目線を下げてしまうと力が抜けてしまい、腰を痛める原因にもなります。</br>目線を上げてお腹に力を入れてしっかりと挙上させていきましょう。',
+
 
 ];
 
@@ -99,8 +103,8 @@ document.write('</p>');
 
 document.write('<p id="next"><button onClick="Q_(0);">次の問題へ</button></p>');
 </script>
+</div>
 
-<%= link_to 'Top', root_path%>
 <%= render "shared/footer" %>
 </body>
 
