@@ -1,0 +1,85 @@
+// Place all the styles related to the mains controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mainbox{
+ background-color: black; 
+ background-image: image-url('training2.jpeg');
+ width: 100vw;
+ height: 100vh;
+ background-size: cover;
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.main-title{
+  color: #ffffff;
+  
+}
+
+
+.main-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  font-size: 65px;
+}
+
+
+.main-dispray{
+  background-color: black;
+}
+
+//header
+.header-main{
+display: flex;
+justify-content: space-between;
+height: 80px;
+background-color: black;
+color: #ffffff;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.header-left{
+  display: flex;  
+  align-items: center;
+}
+.logo a{
+  font-size: 30px;
+  padding: 20px;
+text-decoration:none;
+color: #ffffff;
+}
+
+.header-right{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+
+.header-right a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.header-nav1{
+  padding: 20px;
+}
+.header-nav2{
+  padding: 20px;
+}
+.header-nav3{
+  padding: 20px;
+}
+
+
+//footer 
+.footer-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #ffffff;
+}
