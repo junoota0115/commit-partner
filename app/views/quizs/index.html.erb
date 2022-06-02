@@ -1,7 +1,8 @@
 <html>
 <head>
+<!--header-->
 <%= render "shared/header" %>
-<link rel="stylesheet" href="css/quizs.css">
+<!--header-->
 
 <div class="quiz-main">
 <h1><span>Quiz</span></h1>
@@ -52,7 +53,8 @@ let Q = [//クイズ
 
 ];
 
-let r_1 = Q.length / 5;//クイズを出すための変数
+//let リスト名＝[]
+let r_1 = Q.length / 5;//5行で1つのグループとする
 let r_2 = Math.floor( Math.random() * r_1 ) ;
 let R = (r_2 * 5) ;//クイズを出すための変数
 

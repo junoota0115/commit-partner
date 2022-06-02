@@ -1,31 +1,32 @@
 <%= render "shared/header" %>
+
 <div class="training-main">
-<h1><span>Training</span></h1>
-<div class="training-btn">
-<%= link_to 'Record', new_training_path %>
-</div>
-
-
-<div class="training-record">
-
-<%= month_calendar events: @trainings do |date, trainings| %>
-<div class="training-c">
-  <%= date.day %>
+  <h1><span>Training</span></h1>
+  <div class="training-btn">
+    <%= link_to image_tag("trainings.jpeg", class:"record-img"), new_training_path %>
+    <%= link_to 'Record', new_training_path %>
   </div>
-  </div>
+
+
+  <div class="training-record">
+    <div class="training-m">
+     <%= month_calendar events: @trainings do |date, trainings| %>
+    </div>
+    <div class="training-c">
+      <%= date.day %>
+    </div>
   </div>
   
-<div class="training-name-record">
-  <% trainings.each do |training| %>
-    <div>
-      <%= link_to training.training_name.name,training %>
-    </div>
+  <div class="training-name-record">
+    <% trainings.each do |training| %>
+    <%= link_to training.training_name.name,training %><br>
   <% end %>
   </div>
-<% end %>
+  <% end %>
 
-<%= link_to 'Top', root_path%>
+  <%= link_to 'Top', root_path%>
 
 </div>
+  <%= render "shared/footer" %>
 
-<%= render "shared/footer" %>
+

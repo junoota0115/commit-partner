@@ -1,37 +1,44 @@
 <%= render "shared/header" %>
-<div>トレーニング詳細</div>
+<div class="training-shows">
+    <div class="show-title">TrainingMenu</div>
+      <div class="start_time">
+        <%= @trainings.start_time %>
+        <%=link_to 'Back', trainings_path, class:"back-btn" %>
+    </div>
 
-<div>
-      <span class="trainig-name">
+  <div class="training-show">
+      <div class="trainig-name">
         <%= @trainings.training_name.name %>/
-      </span>
+      </div>
       
-      <span class="weight">
+      <div class="weight">
         <%= @trainings.weight %>/
-      </span>
+      </div>
       
-      <span class="setting_number">
+      <div class="setting_number">
         <%= @trainings.setting_number.name %>回/
-      </span>
+      </div>
 
-      <span class="set_rep">
+      <div class="set_rep">
         <%= @trainings.set_rep.name %>set/
-      </span>
+      </div>
 
-      <span class="rest-time">
+      <div class="rest-time">
         <%= @trainings.rest_time.name %>秒/
-      </span>
-            <span class="memo">
+      </div>
+      
+      <div class="memo">
         <%= @trainings.memo %>
-      </span>
+      </div>
 
-       <tbody>
+
+
       <tr>
         <td><%#= link_to 'Edit' ,@trainings(training.id)%></td>
         <td><%= link_to 'Destroy',@trainings, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     
-  </tbody>
+  </div>
 </div>
 
 

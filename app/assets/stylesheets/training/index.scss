@@ -4,13 +4,11 @@
 
 .training-main{
   height: 100vh;
-  background-image: image-url("training7.jpeg");
+  background-image: image-url("main.JPG");
     border: solid 2px;      /* 枠線指定 */
     background-size: cover;
-    
 }
-
-
+//タイトル
 h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   padding: 1rem 2rem;
@@ -25,7 +23,13 @@ h1 span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+//タイトル
 
+//レコードリンクボタン//
+.training-btn {
+  display:flex;
+  justify-content: center;
+}
 
 .training-btn a{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -34,16 +38,35 @@ h1 span {
   font-size: 20px;
 }
 
-.training-record{
-  font-size: 20px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color:dodgerblue;
+.record-img{
+  width: 40px;
+  height: 40px;
 }
 
+
+//レコードリンクボタン//
+
+//カレンダー日付//
 .training-record a{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-decoration: none;
-  color:#ffce08;
+  color:#fff;
+  -webkit-text-stroke: 0.5px #000;
+}
+
+.training-name-record{
+  font-size: 10px;
+}
+
+.training-m{
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color:chartreuse;
+}
+
+.training-m th{
+color:azure;
+-webkit-text-stroke: 0.5px #000;
 }
 
 .training-c{
@@ -54,7 +77,5 @@ h1 span {
   -webkit-text-stroke: 1px #000;
 }
 
-.training-name-record{
-  font-size: 10px;
-}
 
+//カレンダー日付//

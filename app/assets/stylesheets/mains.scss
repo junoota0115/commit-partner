@@ -4,7 +4,7 @@
 
 .mainbox{
  background-color: black; 
- background-image: image-url('training2.jpeg');
+ background-image: image-url('main.JPG');
  width: 100vw;
  height: 100vh;
  background-size: cover;
@@ -20,8 +20,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
-  font-size: 65px;
+  margin-bottom: 80px;
+  font-size: 70px;
+  -webkit-text-stroke: 1px #000;
 }
 
 
