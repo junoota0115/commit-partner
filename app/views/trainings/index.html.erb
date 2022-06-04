@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
 
+<body>
 <div class="training-main">
   <h1><span>Training</span></h1>
   <div class="training-btn">
@@ -20,13 +21,15 @@
   <div class="training-name-record">
     <% trainings.each do |training| %>
     <%= link_to training.training_name.name,training %><br>
-  <% end %>
+    <% end %>
   </div>
-  <% end %>
+    <% end %>
 
   <%= link_to 'Top', root_path%>
 
 </div>
+</body>
   <%= render "shared/footer" %>
+
 
 
