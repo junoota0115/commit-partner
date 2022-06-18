@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## trainings テーブル
+
+| Column             | Type    | Options                 |
+| ------------------ | ------- | ----------------------- |
+| training_name_id   | integer | null: false             |
+| weight             | string  | null: false             |
+| setting_number_id  | string  | null: false             |
+| set_rep_id         | string  | null: false             |
+| rest_time_id       | string  | null: false             |
+| memo               | text    |                         |
+
+
